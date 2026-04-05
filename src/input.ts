@@ -55,8 +55,8 @@ class Input extends initElement({
   top: 0;
   left: 0;
   z-index: -2;
-  outline: 6px solid transparent;
-  transition: outline 0.3s ease;
+  outline: 9px solid transparent;
+  transition: outline 0.22s ease;
   pointer-events: none;
   background: #fff;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0.05);
