@@ -1,7 +1,7 @@
 import { initElement } from "./core/element";
 
 class Input extends initElement({
-    name: "c-input",
+    name: "swift-input",
     template: `<img icon src="./assets/search.svg" />
 <input placeholder="Placeholder" />
 <img clear src="./assets/xmark.circle.fill.svg" />

@@ -1,7 +1,7 @@
 import { initElement } from "./core/element";
 
 export class Window extends initElement({
-    name: "c-window",
+    name: "swift-window",
     template: `<div titlebar>
     <div wintools>
         <div oval close>

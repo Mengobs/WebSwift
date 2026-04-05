@@ -5,7 +5,7 @@ const props = {
 };
 
 export class MessageBox extends initElement({
-    name: "c-messagebox",
+    name: "swift-messagebox",
     template: `<img icon />
         <slot name="title"></slot>
         <slot name="text"></slot>

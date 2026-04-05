@@ -1,7 +1,7 @@
 import { initElement } from "./core/element";
 
 export class Switch extends initElement({
-    name: "c-switch",
+    name: "swift-switch",
     template: `<div oval></div><div fill></div>`,
     style: `:host {
   width: 26px;

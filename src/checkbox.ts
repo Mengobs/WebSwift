@@ -1,7 +1,7 @@
 import { initElement } from "./core/element";
 
 export class CheckBox extends initElement({
-    name: "c-checkbox",
+    name: "swift-checkbox",
     template: `<div type>
     <img draggable="false" mark src="./assets/tick.svg" />
     <div gradient></div>

@@ -1,7 +1,7 @@
 import { initElement } from "./core/element";
 
 class Progress extends initElement({
-    name: "c-progress",
+    name: "swift-progress",
     template: `<div fill></div><div back></div>`,
     style: `:host {
   width: 100px;

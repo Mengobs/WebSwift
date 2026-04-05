@@ -1,7 +1,7 @@
 import { initElement } from "./core/element";
 
 export class Button extends initElement({
-    name: "c-button",
+    name: "swift-button",
     template: `<p><slot></slot></p><div gradient></div><div fill></div>`,
     style: `:host {
   width: auto;

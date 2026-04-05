@@ -1,40 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebSwift - Test Page</title>
-    <link rel="stylesheet" href="./assets/index.css" />
+    <!-- <link rel="stylesheet" href="./assets/index.css" /> -->
 </head>
 
 <body>
-    <c-button command="alert('123')">Hello</c-button>
-    <c-button primary>Hello</c-button>
-    <c-button disabled="true">Hello</c-button>
-    <c-button primary disabled="true">Hello</c-button>
-    <c-messagebox iconpath="assets/访达.png">
+    <swift-button command="alert('123')">Hello</swift-button>
+    <swift-button primary>Hello</swift-button>
+    <swift-button disabled="true">Hello</swift-button>
+    <swift-button primary disabled="true">Hello</swift-button>
+    <swift-messagebox iconpath="assets/访达.png">
         <p slot="title">Title Goes Here</p>
         <p slot="text">Text Goes Here</p>
-        <c-button primary slot="button">Button Goes Here</c-button>
-    </c-messagebox>
-    <c-checkbox state="on">Hello</c-checkbox>
-    <c-checkbox state="off">Hello</c-checkbox>
-    <c-checkbox state="on" disabled="true">Hello</c-checkbox>
-    <c-checkbox state="off" disabled="true">Hello</c-checkbox>
-    <c-window title="Title Goes Here" width="300" height="300">
+        <swift-button primary slot="button">Button Goes Here</swift-button>
+    </swift-messagebox>
+    <swift-checkbox state="on">Hello</swift-checkbox>
+    <swift-checkbox state="off">Hello</swift-checkbox>
+    <swift-checkbox state="on" disabled="true">Hello</swift-checkbox>
+    <swift-checkbox state="off" disabled="true">Hello</swift-checkbox>
+    <swift-window title="Title Goes Here" width="300" height="300">
         <p>Content Goes Here</p>
-    </c-window>
-    <c-switch state="on"></c-switch>
-    <c-switch state="off"></c-switch>
-    <c-switch state="on" disabled="true"></c-switch>
-    <c-switch state="off" disabled="true"></c-switch>
-    <c-progress progress="50"></c-progress>
-    <c-progress progress="50" small></c-progress>
-    <c-input placeholder="Placeholder"></c-input>
-    <c-input placeholder="Placeholder" type="search"></c-input>
-    <c-input placeholder="Placeholder" disabled="true"></c-input>
-    <c-input placeholder="Placeholder" type="search" disabled="true"></c-input>
+    </swift-window>
+    <swift-switch state="on"></swift-switch>
+    <swift-switch state="off"></swift-switch>
+    <swift-switch state="on" disabled="true"></swift-switch>
+    <swift-switch state="off" disabled="true"></swift-switch>
+    <swift-progress progress="50"></swift-progress>
+    <swift-progress progress="50" small></swift-progress>
+    <swift-input placeholder="Placeholder"></swift-input>
+    <swift-input placeholder="Placeholder" type="search"></swift-input>
+    <swift-input placeholder="Placeholder" disabled="true"></swift-input>
+    <swift-input placeholder="Placeholder" type="search" disabled="true"></swift-input>
+    <swift-tooltip>This is a tooltip.</swift-tooltip>
+    <swift-notification iconpath="assets/访达.png">
+        <p slot="title">Notification Title</p>
+        <p slot="text">Notification Text<br />Notification Text</p>
+        <p slot="time">now</p>
+    </swift-notification>
 
     <script src="./dist/webswift.js"></script>
 </body>

@@ -11,3 +11,5 @@ export * from "./window";
 export * from "./switch";
 export * from "./progress";
 export * from "./input";
+export * from "./notification";
+export * from "./tooltip";

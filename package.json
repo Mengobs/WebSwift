@@ -3,7 +3,10 @@
     "description": "Swift UI on Web Components API based by TypeScript.",
     "version": "1.0.0",
     "keywords": [
-        "Swift", "Web", "UI", "CodeCrafter"
+        "Swift",
+        "Web",
+        "UI",
+        "CodeCrafter"
     ],
     "repository": "CodeCrafter-TL/WebSwift",
     "homepage": "https://codecrafter-tl.github.io/WebSwift",
@@ -16,7 +19,8 @@
     },
     "dependencies": {
         "@rollup/plugin-terser": "^0.4.4",
-        "rollup": "^4.40.1",
-        "terser": "^5.39.0"
+        "rollup": "^4.54.0",
+        "terser": "^5.39.0",
+        "typescript": "^5.9.3"
     }
 }
