@@ -1,6 +1,6 @@
 # WebSwift
 
-> Version / 版本: 1.0.0
+> Version / 版本: 1.2
 
 `Swift UI` on `Web Components API` based by `TypeScript`.
 
