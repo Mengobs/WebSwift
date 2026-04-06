@@ -1,20 +1,9 @@
-@font-face {
-  font-family: "SFPro-Regular";
-  src: url(./sf-pro-display_regular.woff2);
-}
-@font-face {
-  font-family: "PingFangSC-Regular";
-  src: url(./PingFangSC-Regular.woff2);
-}
-@font-face {
-  font-family: "SFPro-Bold";
-  src: url(./sf-pro-display_semibold.woff2);
-}
-@font-face {
-  font-family: "PingFangSC-Bold";
-  src: url(./PingFangSC-Semibold.woff2);
-}
-div[menu] {
+import { initElement } from "./core/element";
+
+export class Menu extends initElement({
+    name: "swift-menu",
+    template: `<slot></slot>`,
+    style: `:host {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
@@ -28,7 +17,7 @@ div[menu] {
   backdrop-filter: blur(30px) saturate(200%);
   padding: 5px 5px;
 }
-div[menu] p {
+:host ::slotted(p) {
   margin: 0;
   font-family: "SFPro-Medium", "PingFangSC-Medium";
   font-size: 13px;
@@ -38,8 +27,25 @@ div[menu] p {
   align-items: center;
   padding: 3px 10px;
 }
-div[menu] p:hover {
+:host ::slotted(p:hover) {
   background: #0a82ff;
-  color: white;
+  color: #fff;
   border-radius: 5px;
-}/*# sourceMappingURL=index.css.map */
+}`,
+    props: {
+        width: "auto",
+    },
+    syncProps: ["width"],
+    setup(shadow) {
+        setTimeout(()=>{
+            let width = this.width;
+            if (width == "auto") {
+                this.style.width = width;
+            } else {
+                this.style.width = width + "px";
+            }
+        });
+    }
+}) {}
+
+Menu.define();

@@ -1,7 +1,7 @@
 /*
-    * WebSwift Version 1.0
+    * WebSwift Version 1.2
 
-    * MIT License. Copyright 2025 CodeCrafter-TL.
+    * MIT License. Copyright 2025 - 2026 Mengobs.
 */
 
 export * from "./button";
@@ -13,3 +13,4 @@ export * from "./progress";
 export * from "./input";
 export * from "./notification";
 export * from "./tooltip";
+export * from "./menu";

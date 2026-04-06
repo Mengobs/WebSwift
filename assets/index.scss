@@ -17,19 +17,37 @@ $iter: 1;
     $iter: $iter + 1;
 }
 
-div[tooltip] {
+div[menu] {
     display: inline-flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
     width: auto;
     height: auto;
-    padding: 3px 6px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2), 0 0 0 rgba(0, 0, 0, 0.12);
-    background: rgba(246, 246, 246, 0.72);
+    border: outset 0.5px rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0 0.5px 1px rgba(255, 255, 255, 0.5),
+        0 2px 4px rgba(0, 0, 0, 0.15),
+        0 8px 15px rgba(0, 0, 0, 0.18);
+    border-radius: 8px;
+    overflow: hidden;
+    background: rgba(246, 246, 246, 0.6);
+    backdrop-filter: blur(30px) saturate(200%);
+    padding: 5px 5px;
+    // gap: 6px;
 
     p {
         margin: 0;
         font-family: "SFPro-Medium", "PingFangSC-Medium";
-        font-size: 11px;
+        font-size: 13px;
+        line-height: 16px;
+        height: 16px;
+        display: flex;
+        align-items: center;
+        padding: 3px 10px;
+
+        &:hover {
+            background: #0a82ff;
+            color: white;
+            border-radius: 5px;
+        }
     }
 }
