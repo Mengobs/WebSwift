@@ -2,9 +2,9 @@ import { initElement } from "./core/element";
 
 class Input extends initElement({
     name: "swift-input",
-    template: `<img icon src="./assets/search.svg" />
+    template: `<img icon src="/assets/search.svg" />
 <input placeholder="Placeholder" />
-<img clear src="./assets/xmark.circle.fill.svg" />
+<img clear src="/assets/xmark.circle.fill.svg" />
 <div fill></div>`,
     style: `:host {
   width: 206px;

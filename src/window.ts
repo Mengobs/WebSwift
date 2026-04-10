@@ -5,13 +5,13 @@ export class Window extends initElement({
     template: `<div titlebar>
     <div wintools>
         <div oval close>
-            <img src="../assets/xmark.svg" />
+            <img src="/assets/xmark.svg" />
         </div>
         <div oval minimize>
-            <img src="../assets/minus.svg" />
+            <img src="/assets/minus.svg" />
         </div>
         <div oval zoom>
-            <img src="../assets/arrow.up.left.and.arrow.down.right.svg" />
+            <img src="/assets/arrow.up.left.and.arrow.down.right.svg" />
         </div>
     </div>
     <p title></p>
@@ -28,6 +28,8 @@ export class Window extends initElement({
   min-width: 86px;
   min-height: 38px;
   resize: both;
+  font-size: 13px;
+  font-family: "SFPro-Regular", "PingFangSC-Regular";
 }
 :host::-webkit-resizer {
   display: none;
@@ -111,7 +113,7 @@ export class Window extends initElement({
             shadow.querySelector("p[title]")!.innerHTML = title;
             let width = this.width;
             let height = this.height;
-            this.style.width = width + "px";
+            this.style.width = width + ((!String(width).endsWith("%")) ? "px" : "");
             this.style.height = height + "px";
         })
 

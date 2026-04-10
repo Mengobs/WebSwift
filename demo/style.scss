@@ -1,0 +1,56 @@
+body {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../docs/images/background.png);
+    background-size: cover;
+}
+
+p {
+    margin: 0;
+}
+
+div.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(15px) saturate(120%);
+}
+
+body>swift-window {
+    width: 80%;
+    height: 80%;
+
+    .row {
+        width: calc(100% - 60px);
+        height: auto;
+        margin: 0 20px;
+        padding: 10px;
+        border-radius: 6px;
+        border: solid 1px rgba(0, 0, 0, 0.04);
+        background: rgba(0, 0, 0, 0.02);
+        display: inline-flex;
+        // align-items: center;
+        justify-content: space-between;
+
+        &.first {
+            border-radius: 6px 6px 0 0;
+            border-bottom: solid 0.5px rgba(0, 0, 0, 0.04);
+        }
+
+        &.middle {
+            border-radius: 0;
+            border-top: solid 0.5px rgba(0, 0, 0, 0.04);
+            border-bottom: solid 0.5px rgba(0, 0, 0, 0.04);
+        }
+
+        &.last {
+            border-radius: 0 0 6px 6px;
+            border-top: solid 0.5px rgba(0, 0, 0, 0.04);
+        }
+    }
+}

@@ -1,5 +1,6 @@
 node_modules/
 index.html
+!demo/index.html
 dist/
 .DS_Store
 site

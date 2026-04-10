@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSwift - Demo Page</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="overlay"></div>
+    <swift-window title="WebSwift" width="60%" height="80%">
+        <div class="row first" style="margin-top: 20px;">
+            <p>Button</p>
+            <div>
+                <swift-button>Button</swift-button>
+                <swift-button primary>Button</swift-button>
+            </div>
+        </div>
+        <div class="row middle">
+            <p>Input</p>
+            <swift-input></swift-input>
+        </div>
+        <div class="row middle">
+            <p>Switch</p>
+            <swift-switch></swift-switch>
+        </div>
+        <div class="row middle">
+            <p>Menu</p>
+            <swift-menu>
+                <p>Menu 1</p>
+                <p>Menu 2</p>
+                <p>Menu 3</p>
+                <p>Menu 4</p>
+                <p>Menu 5</p>
+            </swift-menu>
+        </div>
+        <div class="row last">
+            <p>Checkbox</p>
+            <swift-checkbox></swift-checkbox>
+        </div>
+    </swift-window>
+
+    <script src="../dist/webswift.js"></script>
+</body>
+
+</html>
