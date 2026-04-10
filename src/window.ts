@@ -134,7 +134,8 @@ export class Window extends initElement({
                 }
             });
         });
+        return {}
     }
 }) {}
 
-Window.define();
+Window.defineElement();

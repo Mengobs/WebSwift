@@ -42,9 +42,10 @@ class Progress extends initElement({
             const fill = shadow.querySelector("div[fill]");
             (fill as HTMLElement).style.width = `${this.progress}%`;
         });
+        return {}
     },
     dispatch: {
-        attrchanges(key, value) {
+        propChanged(key, value) {
             if (key == "progress") {
                 const fill = this.shadowRoot?.querySelector("div[fill]");
                 (fill as HTMLElement).style.width = `${value}%`;
@@ -53,4 +54,4 @@ class Progress extends initElement({
     }
 }) {}
 
-Progress.define();
+Progress.defineElement();

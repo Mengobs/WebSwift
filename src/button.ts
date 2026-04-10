@@ -1,9 +1,9 @@
-import { initElement } from "./core/element";
+import { autoSetAttr, initElement } from "./core/element";
 
 export class Button extends initElement({
-    name: "swift-button",
-    template: `<p><slot></slot></p><div gradient></div><div fill></div>`,
-    style: `:host {
+  name: "swift-button",
+  template: `<p><slot></slot></p><div gradient></div><div fill></div>`,
+  style: `:host {
   width: auto;
   height: auto;
   border-radius: 5px;
@@ -22,6 +22,7 @@ export class Button extends initElement({
   border: 0.5px solid rgba(0, 0, 0, 0.02);
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.15), 0 1px 0 rgba(0, 0, 0, 0.05);
   font-family: "SFPro-Regular", "PingFangSC-Regular";
+  filter: brightness(1);
 }
 :host [gradient] {
   width: 100%;
@@ -74,32 +75,35 @@ export class Button extends initElement({
 :host([disabled=true]) p {
   color: rgba(0, 0, 0, 0.25);
 }`,
-    props: {
-        disabled: "false",
-        command: ""
-    },
-    syncProps: [
-        "disabled",
-        "command"
-    ],
-    setup(shadow) {
-        setTimeout(() => {
-            const command = new Function(this.command);
-            let is_mousedown: boolean;
-            //@ts-ignore
-            this.addEventListener("mousedown", () => {
-                is_mousedown = true;
-                this.style.filter = "brightness(0.9)";
-            });
-            window.addEventListener("mouseup", () => {
-                if (!is_mousedown) return;
-                is_mousedown = false;
-                this.style.filter = "brightness(1)";
-                command();
-            });
-        })
-    }
+  props: {
+    disabled: "false",
+    command: ""
+  },
+  syncProps: [
+    "disabled",
+    "command"
+  ],
+  setup(shadow) {
+    setTimeout(() => {
+      const command = new Function(this.command);
+      let is_mousedown: boolean;
+      this.addEventListener("mousedown", () => {
+        is_mousedown = true;
+        this.style.filter = "brightness(0.9)";
+      });
+      window.addEventListener("mouseup", () => {
+        if (!is_mousedown) return;
+        is_mousedown = false;
+        this.style.filter = "brightness(1)";
+        command();
+      });
+    })
+    autoSetAttr(this, {
+      disabled: "false",
+    })
+    return {}
+  }
 }) {
 }
 
-Button.define();
+Button.defineElement();

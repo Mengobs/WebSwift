@@ -72,11 +72,12 @@ export class MessageBox extends initElement({
     setup(shadow) {
         console.log(111)
         setTimeout(() => {
-            const img = shadow.querySelector("img") as HTMLImageElement;
-            img.src = this.iconpath;
+            const img = shadow.querySelector<HTMLImageElement>("img");
+            img!.src = this.iconpath;
             console.log(img, this.iconpath)
         });
+        return {}
     }
 }) { }
 
-MessageBox.define();
+MessageBox.defineElement();

@@ -93,7 +93,6 @@ class Notification extends initElement({
         const icon = shadow.querySelector("img") as HTMLImageElement;
         const command = new Function(this.command);
         let is_mousedown: Boolean;
-        icon.src = this.iconpath;
         this.addEventListener("mousedown", () => {
             is_mousedown = true;
             this.style.filter = "brightness(0.9)";
@@ -105,7 +104,15 @@ class Notification extends initElement({
             this.style.filter = "brightness(1)";
             command();
         });
+        return {}
+    },
+    dispatch: {
+        connected() {
+            const a = this.shadowRoot?.querySelector("img")
+            if (a)
+                a.src = this.iconpath
+        }
     }
 }) {
 }
-Notification.define();
+Notification.defineElement();

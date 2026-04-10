@@ -1,16 +1,16 @@
 {
     "name": "web-swift",
     "description": "Swift UI on Web Components API based by TypeScript.",
-    "version": "1.0.0",
+    "version": "1.3.0",
     "keywords": [
         "Swift",
         "Web",
         "UI",
-        "CodeCrafter"
+        "Mengobs"
     ],
-    "repository": "CodeCrafter-TL/WebSwift",
-    "homepage": "https://codecrafter-tl.github.io/WebSwift",
-    "author": "CodeCrafter-TL",
+    "repository": "Mengobs/WebSwift",
+    "homepage": "https://mengobs.github.io/WebSwift",
+    "author": "Mengobs",
     "main": "./dist/main.js",
     "scripts": {
         "build": "tsc\nrollup --config rollup.config.mjs\ncp -r dist/webswift.js docs/overrides/js",

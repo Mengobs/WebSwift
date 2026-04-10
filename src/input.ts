@@ -1,17 +1,18 @@
 import { initElement } from "./core/element";
 
 class Input extends initElement({
-    name: "swift-input",
-    template: `<img icon src="/assets/search.svg" />
+  name: "swift-input",
+  template: `<img icon src="/assets/search.svg" />
 <input placeholder="Placeholder" />
 <img clear src="/assets/xmark.circle.fill.svg" />
 <div fill></div>`,
-    style: `:host {
+  style: `:host {
   width: 206px;
   height: 22px;
   position: relative;
   display: inline-flex;
   align-items: center;
+  filter: brightness(1);
 }
 :host img[icon] {
   display: none;
@@ -66,7 +67,6 @@ class Input extends initElement({
   position: absolute;
   right: 3px;
   top: 3px;
-  pointer-events: none;
   width: 16px;
   height: 16px;
   transition: opacity 0.25s ease;
@@ -90,36 +90,41 @@ class Input extends initElement({
 }
 :host([disabled=true][type=search]) img[icon] {
   opacity: 0.5;
+}
+:host img[clear]:active{
+filter: brightness(0.9);
 }`,
-    props: {
-        type: "",
-        disabled: "false",
-        placeholder: "",
-        value: ""
-    },
-    syncProps: ["type", "disabled", "placeholder", "value"],
-    setup(shadow) {
-        const clear = shadow.querySelector("img[clear]") as HTMLElement;
-        const input = shadow.querySelector("input") as HTMLInputElement;
+  props: {
+    type: "",
+    disabled: "false",
+    placeholder: "",
+    value: ""
+  },
+  syncProps: ["type", "disabled", "placeholder", "value"],
+  setup(shadow) {
+    const clear_e = shadow.querySelector("img[clear]") as HTMLElement;
+    const input = shadow.querySelector("input") as HTMLInputElement;
 
-        this.value = input?.value as string;
-        this.placeholder = input?.placeholder as string;
-        input.value = this.value;
-        input.placeholder = this.placeholder;
-
-        clear?.addEventListener("mousedown", () => {
-            clear.style.filter = "brightness(0.9)";
-            input.focus();
-            input.value = "";
-            this.value = input.value;
-        });
-        clear?.addEventListener("mouseup", () => {
-            clear.style.filter = "brightness(1)";
-            input.focus();
-            input.value = "";
-            this.value = input.value;
-        });
+    this.value = input?.value as string;
+    this.placeholder = input?.placeholder as string;
+    input.value = this.value;
+    input.placeholder = this.placeholder;
+    const clear = () => {
+      this.value = ""
+      input.value = ""
     }
-}) {}
+    input.addEventListener("input", () => this.value = input.value)
+    clear_e.addEventListener("mousedown", ()=>{
+      input.focus()
+    })
+    clear_e.addEventListener("click", () => {
+      input.focus()
+      clear()
+    })
+    return {
+      clear
+    }
+  }
+}) { }
 
-Input.define();
+Input.defineElement();

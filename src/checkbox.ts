@@ -1,4 +1,9 @@
-import { initElement } from "./core/element";
+import { initElement, autoSetAttr } from "./core/element";
+
+const props = {
+    state: "on",
+    disabled: "false"
+};
 
 export class CheckBox extends initElement({
     name: "swift-checkbox",
@@ -7,7 +12,7 @@ export class CheckBox extends initElement({
     <div gradient></div>
     <div fill></div>
 </div>
-<p label>Hello</p>`,
+<p label><slot></slot></p>`,
     style: `:host {
   width: auto;
   height: auto;
@@ -96,27 +101,19 @@ export class CheckBox extends initElement({
   margin-left: 6px;
   font-size: 13px;
   font-family: "SFPro-Regular", "PingFangSC-Regular";
+}
+:host(:active){
+  filter: brightness(0.9);
 }`,
-    props: {
-        state: "on",
-        disabled: "false"
-    },
+    props: props,
     syncProps: ["state", "disabled"],
     setup(shadow) {
-        let is_mousedown: boolean;
-        this.addEventListener("mousedown", () => {
-            is_mousedown = true
-            this.style.filter = "brightness(0.9)";
-        });
-        window.addEventListener("mouseup", () => {
-            if (!is_mousedown) return;
-            is_mousedown = false;
+        this.addEventListener("click", () => {
             this.state = this.state == "on" ? "off" : "on"
-            this.style.filter = "brightness(1)";
         });
+        autoSetAttr(this, props);
+        return {};
     }
-}) {
+}) {}
 
-}
-
-CheckBox.define();
+CheckBox.defineElement();

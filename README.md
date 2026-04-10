@@ -6,6 +6,9 @@
 
 由 `TypeScript` 开发，基于 `Web Components API` 的 `Swift UI` 实现。
 
+> Swift, Mac, macOS and SwiftUI were track marks registered by Apple.
+> Swift、Mac、macOS、SwiftUI 是 Apple Inc. 注册的商标。
+
 <a href="https://github.com/mengobs/webswift/watchers"><img alt="Watchers" src="https://img.shields.io/github/watchers/mengobs/webswift?label=Watchers&logo=github&style=flat" title="Watchers" /></a>
 <a href="https://github.com/mengobs/webswift/forks"><img alt="Forks" src="https://img.shields.io/github/forks/mengobs/webswift?label=Forks&logo=github&style=flat" title="Forks" /></a>
 <a href="https://github.com/mengobs/webswift/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/mengobs/webswift?label=Stars&color=gold&logo=github&style=flat" title="Stars" /></a>

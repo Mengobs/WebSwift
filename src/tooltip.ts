@@ -21,7 +21,6 @@ export class Tooltip extends initElement({
 }`,
     props: {},
     syncProps: [],
-    setup(shadow) {}
 }) {}
 
-Tooltip.define();
+Tooltip.defineElement();

@@ -37,15 +37,18 @@ export class Menu extends initElement({
     },
     syncProps: ["width"],
     setup(shadow) {
-        setTimeout(()=>{
+        return {}
+    },
+    dispatch: {
+        connected() {
             let width = this.width;
             if (width == "auto") {
                 this.style.width = width;
             } else {
                 this.style.width = width + "px";
             }
-        });
+        }
     }
-}) {}
+}) { }
 
-Menu.define();
+Menu.defineElement();
