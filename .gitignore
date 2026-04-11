@@ -4,3 +4,6 @@ index.html
 dist/
 .DS_Store
 site
+index.scss
+index.css
+index.css.map

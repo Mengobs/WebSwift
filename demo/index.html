@@ -20,7 +20,10 @@
         </div>
         <div class="row middle">
             <p>Input</p>
-            <swift-input></swift-input>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <swift-input placeholder="WebSwift"></swift-input>
+                <swift-input placeholder="WebSwift" type="search"></swift-input>
+            </div>
         </div>
         <div class="row middle">
             <p>Switch</p>
@@ -42,7 +45,10 @@
         </div>
         <div class="row last">
             <p>Progress</p>
-            <swift-progress></swift-progress>
+            <div style="display: flex; flex-direction: column; gap: 25px;">
+                <swift-progress progress="25"></swift-progress>
+                <swift-progress small progress="75"></swift-progress>
+            </div>
         </div>
     </swift-window>
 

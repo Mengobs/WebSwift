@@ -1,12 +1,25 @@
 import { initElement } from "./core/element";
 
 class Input extends initElement({
-  name: "swift-input",
-  template: `<img icon src="/assets/search.svg" />
+    name: "swift-input",
+    template: `<svg icon width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" font-family="SFPro-Medium, SF Pro" font-size="13" font-weight="400" line-spacing="16">
+      <g id="Controls/Search-Field/x/Search-Icon" fill="#4C4C4C">
+          <text id="Symbol" style="mix-blend-mode: normal;">
+              <tspan x="0" y="12">􀊫</tspan>
+          </text>
+      </g>
+  </g>
+</svg>
 <input placeholder="Placeholder" />
-<img clear src="/assets/xmark.circle.fill.svg" />
+<svg clear version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 25.8008 25.459">
+ <g>
+  <rect height="25.459" opacity="0" width="25.8008" x="0" y="0"/>
+  <path d="M25.4395 12.7246C25.4395 19.7266 19.7266 25.4395 12.7148 25.4395C5.71289 25.4395 0 19.7266 0 12.7246C0 5.71289 5.71289 0 12.7148 0C19.7266 0 25.4395 5.71289 25.4395 12.7246ZM16.3477 7.87109L12.7148 11.4844L9.10156 7.88086C8.92578 7.70508 8.73047 7.61719 8.47656 7.61719C7.97852 7.61719 7.57812 7.99805 7.57812 8.49609C7.57812 8.74023 7.67578 8.95508 7.85156 9.13086L11.4551 12.7344L7.85156 16.3379C7.67578 16.5137 7.57812 16.7383 7.57812 16.9727C7.57812 17.4805 7.97852 17.8809 8.47656 17.8809C8.73047 17.8809 8.95508 17.7832 9.13086 17.6074L12.7148 14.0039L16.3086 17.6074C16.4844 17.7832 16.709 17.8809 16.9629 17.8809C17.4609 17.8809 17.8613 17.4805 17.8613 16.9727C17.8613 16.7285 17.7832 16.5039 17.5977 16.3281L13.9941 12.7344L17.6074 9.12109C17.8027 8.92578 17.8711 8.73047 17.8711 8.47656C17.8711 7.98828 17.4707 7.59766 16.9824 7.59766C16.7383 7.59766 16.543 7.67578 16.3477 7.87109Z" fill="black" fill-opacity="0.85"/>
+ </g>
+</svg>
 <div fill></div>`,
-  style: `:host {
+    style: `:host {
   width: 206px;
   height: 22px;
   position: relative;
@@ -14,7 +27,7 @@ class Input extends initElement({
   align-items: center;
   filter: brightness(1);
 }
-:host img[icon] {
+:host svg[icon] {
   display: none;
 }
 :host input {
@@ -62,7 +75,7 @@ class Input extends initElement({
   background: #fff;
   box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3), 0 0 0 0 rgba(0, 0, 0, 0.05);
 }
-:host img[clear] {
+:host svg[clear] {
   opacity: 0;
   position: absolute;
   right: 3px;
@@ -71,7 +84,7 @@ class Input extends initElement({
   height: 16px;
   transition: opacity 0.25s ease;
 }
-:host([type=search]) img[icon] {
+:host([type=search]) svg[icon] {
   display: block;
   margin-left: 7px;
 }
@@ -88,43 +101,45 @@ class Input extends initElement({
 :host([disabled=true]) div[fill] {
   background: rgba(255, 255, 255, 0.5) !important;
 }
-:host([disabled=true][type=search]) img[icon] {
+:host([disabled=true][type=search]) svg[icon] {
   opacity: 0.5;
 }
 :host img[clear]:active{
 filter: brightness(0.9);
 }`,
-  props: {
-    type: "",
-    disabled: "false",
-    placeholder: "",
-    value: ""
-  },
-  syncProps: ["type", "disabled", "placeholder", "value"],
-  setup(shadow) {
-    const clear_e = shadow.querySelector("img[clear]") as HTMLElement;
-    const input = shadow.querySelector("input") as HTMLInputElement;
+    props: {
+        type: "",
+        disabled: "false",
+        placeholder: "",
+        value: ""
+    },
+    syncProps: ["type", "disabled", "placeholder", "value"],
+    setup(shadow) {
+        const clear_e = shadow.querySelector("svg[clear]") as HTMLElement;
+        const input = shadow.querySelector("input") as HTMLInputElement;
+        const host = this as unknown as HTMLElement;
 
-    this.value = input?.value as string;
-    this.placeholder = input?.placeholder as string;
-    input.value = this.value;
-    input.placeholder = this.placeholder;
-    const clear = () => {
-      this.value = ""
-      input.value = ""
+        const placeholder = host.getAttribute('placeholder') || '';
+        const value = host.getAttribute('value') || '';
+        input.placeholder = placeholder;
+        input.value = value;
+
+        const clear = () => {
+            this.value = ""
+            input.value = ""
+        }
+        input.addEventListener("input", () => this.value = input.value)
+        clear_e.addEventListener("mousedown", () => {
+            input.focus()
+        })
+        clear_e.addEventListener("click", () => {
+            input.focus()
+            clear()
+        })
+        return {
+            clear
+        }
     }
-    input.addEventListener("input", () => this.value = input.value)
-    clear_e.addEventListener("mousedown", ()=>{
-      input.focus()
-    })
-    clear_e.addEventListener("click", () => {
-      input.focus()
-      clear()
-    })
-    return {
-      clear
-    }
-  }
 }) { }
 
 Input.defineElement();

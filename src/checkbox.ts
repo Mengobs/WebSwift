@@ -1,119 +1,73 @@
 import { initElement, autoSetAttr } from "./core/element";
-
 const props = {
     state: "on",
     disabled: "false"
-};
-
-export class CheckBox extends initElement({
+}
+export class Checkbox extends initElement({
     name: "swift-checkbox",
     template: `<div type>
-    <img draggable="false" mark src="/assets/tick.svg" />
-    <div gradient></div>
-    <div fill></div>
+    <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
+            font-family="SFPro-Bold, SF Pro" font-size="10" font-weight="bold">
+            <g id="Controls/Checkbox/Checkbox" transform="translate(-1, -1.5)" fill="#FFFFFF">
+                <g id="Checkbox-Type" transform="translate(0, 1)">
+                    <text id="􀆅">
+                        <tspan x="1.18945312" y="10.5">􀆅</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </svg>
 </div>
-<p label><slot></slot></p>`,
+<p><slot></slot></p>`,
     style: `:host {
-  width: auto;
-  height: auto;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: auto;
+  height: auto;
+  font-family: "SFPro-Regular";
+  font-size: 13px;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  cursor: default;
 }
 :host div[type] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 14px;
   height: 14px;
-  position: relative;
-}
-:host div[type] img[mark] {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  scale: 0.8;
-  display: none;
-}
-:host div[type] div[gradient] {
-  opacity: 0.17;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   border-radius: 3.5px;
-  z-index: -1;
-  display: none;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0)), #007aff;
+  /* background: #007aff; */
+  margin-right: 7px;
+  box-shadow: 0 0.5px 3px rgba(0, 122, 255, 0.12), 0 1px 2px rgba(0, 122, 255, 0.12), 0 0.5px 1px rgba(0, 122, 255, 0.24);
 }
-:host div[type] div[fill] {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -2;
-  background: #FFFFFF;
-  border: 0.5px solid rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.1), inset 0 0 2px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 3.5px;
-}
-:host([state=on]) div[type] img[mark] {
-  display: initial;
-}
-:host([state=on]) div[type] div[gradient] {
-  display: block;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 96%);
-}
-:host([state=on]) div[type] div[fill] {
-  border: none;
-  background: #007aff;
-  box-shadow: 0 0 3px 0 rgba(255, 255, 255, 0.12), 0 1px 2px 0 rgba(255, 255, 255, 0.12), 0 0 1px 0 rgba(255, 255, 255, 0.24);
-}
-:host([disabled=true][state=on]) img[mark] {
-  opacity: 0.25 !important;
-  filter: invert(1);
-}
-:host([disabled=true][state=on]) div[gradient] {
-  display: none;
-}
-:host([disabled=true][state=on]) div[fill] {
-  opacity: 0.5 !important;
-  background: #FFFFFF !important;
-  border: 0.5px solid rgba(0, 0, 0, 0.02) !important;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.15), 0 1px 0 0 rgba(0, 0, 0, 0.05) !important;
-}
-:host([disabled=true][state=off]) div[fill] {
-  opacity: 0.49;
-  background: #FFFFFF;
-  border: 0.5px solid rgba(0, 0, 0, 0.15);
-  box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.1), inset 0 0 2px 0 rgba(0, 0, 0, 0.1);
-}
-:host([disabled=true]){
-  pointer-events:none;
-}
-:host p[label] {
+:host p,
+:host svg {
   margin: 0;
-  margin-left: 6px;
-  font-size: 13px;
-  font-family: "SFPro-Regular", "PingFangSC-Regular";
 }
-:host(:active){
+:host([state=off]) div[type] {
+  background: #fff;
+  border: inset 0.5px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 0 2px rgba(0, 0, 0, 0.1);
+}
+:host(:active) {
   filter: brightness(0.9);
 }`,
-    props: props,
+    props,
     syncProps: ["state", "disabled"],
-    setup(shadow) {
-        this.addEventListener("click", () => {
-            this.state = this.state == "on" ? "off" : "on"
-        });
-        autoSetAttr(this, props);
-        return {};
+    setup(_shadow) {
+        this.addEventListener("click", () => (this.state = this.state == "on" ? "off" : "on"))
+        return {}
+    },
+    dispatch: {
+        connected() {
+            autoSetAttr(this, props)
+        }
     }
-}) {}
+}) { }
 
-CheckBox.defineElement();
+Checkbox.defineElement();

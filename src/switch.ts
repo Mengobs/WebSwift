@@ -1,12 +1,12 @@
 import { initElement, autoSetAttr } from "./core/element";
 const props = {
-  state: "on",
-  disabled: "false"
+    state: "on",
+    disabled: "false"
 }
 export class Switch extends initElement({
-  name: "swift-switch",
-  template: `<div oval></div><div fill></div>`,
-  style: `:host {
+    name: "swift-switch",
+    template: `<div oval></div><div fill></div>`,
+    style: `:host {
   width: 26px;
   height: 15px;
   position: relative;
@@ -67,21 +67,17 @@ export class Switch extends initElement({
 :host(:active) {
   filter: brightness(0.9);
 }`,
-  props,
-  syncProps: ["state", "disabled"],
-  setup(_shadow) {
-    this.addEventListener("click", () => (this.state = this.state == "on" ? "off" : "on"))
-    return {
-      open() {
-        //组件的回调函数
-      }
+    props,
+    syncProps: ["state", "disabled"],
+    setup(_shadow) {
+        this.addEventListener("click", () => (this.state = this.state == "on" ? "off" : "on"))
+        return {}
+    },
+    dispatch: {
+        connected() {
+            autoSetAttr(this, props)
+        }
     }
-  },
-  dispatch: {
-    connected() {
-      autoSetAttr(this, props)
-    }
-  }
 }) { }
 
 Switch.defineElement();

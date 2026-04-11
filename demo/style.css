@@ -22,7 +22,7 @@ div.overlay {
 }
 
 body > swift-window {
-  width: 80%;
+  width: 60%;
   height: 80%;
 }
 body > swift-window .row {
