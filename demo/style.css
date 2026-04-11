@@ -7,7 +7,7 @@ body {
   background: url(../docs/images/background.png);
   background-size: cover;
   font-family: "SFPro-Regular", "PingFangSC-Regular";
-  letter-spacing: 0.19px;
+  letter-spacing: 0.5px;
 }
 
 @font-face {
