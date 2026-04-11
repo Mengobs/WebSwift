@@ -55,7 +55,7 @@ export class MessageBox extends initElement({
   font-size: 13px;
   margin: 0;
   margin-bottom: 10px;
-  font-family: "SFPro-Bold", "PingFangSC-Bold";
+  font-family: "SFPro-Semibold", "PingFangSC-Semibold";
 }
 ::slotted([slot=text]) {
   font-size: 11px;

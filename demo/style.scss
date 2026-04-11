@@ -23,6 +23,12 @@ body {
 }
 
 @font-face {
+    font-family: 'PingFangSC-Semibold';
+    src: url(./PingFangSC-Semibold.woff2);
+    /* (C) 2015 Apple Inc. All rights reserved. */
+}
+
+@font-face {
     font-family: 'SFPro-Medium';
     src: url(./sf-pro-display_medium.woff2);
     /* (C) 2019 Apple Inc. All rights reserved. */
@@ -31,6 +37,12 @@ body {
 @font-face {
     font-family: 'SFPro-Regular';
     src: url(./sf-pro-display_regular.woff2);
+    /* (C) 2019 Apple Inc. All rights reserved. */
+}
+
+@font-face {
+    font-family: 'SFPro-Semibold';
+    src: url(./sf-pro-display_semibold.woff2);
     /* (C) 2019 Apple Inc. All rights reserved. */
 }
 

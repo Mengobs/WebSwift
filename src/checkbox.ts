@@ -9,7 +9,7 @@ export class Checkbox extends initElement({
     <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink">
         <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
-            font-family="SFPro-Bold, SF Pro" font-size="10" font-weight="bold">
+            font-family="SFPro-Semibold, SF Pro" font-size="10" font-weight="bold">
             <g id="Controls/Checkbox/Checkbox" transform="translate(-1, -1.5)" fill="#FFFFFF">
                 <g id="Checkbox-Type" transform="translate(0, 1)">
                     <text id="􀆅">

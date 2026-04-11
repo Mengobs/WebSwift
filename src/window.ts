@@ -106,7 +106,7 @@ export class Window extends initElement({
 }
 :host div[titlebar] p[title] {
   font-size: 13px;
-  font-family: "SFPro-Bold", "PingFangSC-Bold";
+  font-family: "SFPro-Semibold", "PingFangSC-Semibold";
   max-width: 40%;
   white-space: nowrap;
   overflow: hidden;
