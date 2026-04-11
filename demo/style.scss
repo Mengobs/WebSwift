@@ -6,6 +6,32 @@ body {
     justify-content: center;
     background: url(../docs/images/background.png);
     background-size: cover;
+    font-family: "SFPro-Regular", "PingFangSC-Regular";
+    letter-spacing: 0.19px;
+}
+
+@font-face {
+    font-family: 'PingFangSC-Medium';
+    src: url(./PingFangSC-Medium.woff2);
+    /* (C) 2015 Apple Inc. All rights reserved. */
+}
+
+@font-face {
+    font-family: 'PingFangSC-Regular';
+    src: url(./PingFangSC-Regular.woff2);
+    /* (C) 2015 Apple Inc. All rights reserved. */
+}
+
+@font-face {
+    font-family: 'SFPro-Medium';
+    src: url(./sf-pro-display_medium.woff2);
+    /* (C) 2019 Apple Inc. All rights reserved. */
+}
+
+@font-face {
+    font-family: 'SFPro-Regular';
+    src: url(./sf-pro-display_regular.woff2);
+    /* (C) 2019 Apple Inc. All rights reserved. */
 }
 
 p {
@@ -38,6 +64,7 @@ body>swift-window {
         justify-content: space-between;
 
         &.first {
+            margin-top: 20px;
             border-radius: 6px 6px 0 0;
             border-bottom: solid 0.5px rgba(0, 0, 0, 0.04);
         }
@@ -49,6 +76,7 @@ body>swift-window {
         }
 
         &.last {
+            margin-bottom: 20px;
             border-radius: 0 0 6px 6px;
             border-top: solid 0.5px rgba(0, 0, 0, 0.04);
         }

@@ -115,6 +115,8 @@ export class Window extends initElement({
 :host div[content] {
   width: 100%;
   height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
 }`,
     props: {
         title: "",
