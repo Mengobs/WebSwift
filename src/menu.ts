@@ -19,7 +19,8 @@ export class Menu extends initElement({
 }
 :host ::slotted(p) {
   margin: 0;
-  font-family: "SFPro-Medium", "PingFangSC-Medium";
+  font-family: "SFPro-Regular", "PingFangSC-Regular";
+  font-weight: 510;
   font-size: 13px;
   line-height: 16px;
   height: 16px;
