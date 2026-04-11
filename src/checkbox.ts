@@ -6,12 +6,18 @@ const props = {
 export class Checkbox extends initElement({
     name: "swift-checkbox",
     template: `<div type>
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 106.592 109.131">
-        <g>
-            <rect height="109.131" opacity="0" width="106.592" x="0" y="0"/>
-            <path d="M39.502 109.131C41.7969 109.131 43.5059 108.105 44.7754 106.25L105.225 11.4746C106.201 9.96094 106.592 8.78906 106.592 7.61719C106.592 4.63867 104.639 2.68555 101.66 2.68555C99.6094 2.68555 98.3887 3.41797 97.168 5.41992L39.2578 96.9238L9.66797 59.3262C8.34961 57.5195 7.08008 56.7383 5.07812 56.7383C2.09961 56.7383 0 58.7891 0 61.7188C0 62.9883 0.488281 64.3066 1.5625 65.625L34.0332 106.152C35.6445 108.203 37.2559 109.131 39.502 109.131Z" fill="black" fill-opacity="0.85"/>
-        </g>
-    </svg>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 8.97949 8.61816">
+    <g>
+        <rect height="8.61816" opacity="0" width="8.97949" x="0" y="0"/>
+        <path d="M3.18359 8.61816C3.39355 8.61816 3.55957 8.52539 3.67676 8.34473L8.29102 1.0791C8.37891 0.9375 8.41309 0.830078 8.41309 0.717773C8.41309 0.449219 8.2373 0.273438 7.96875 0.273438C7.77344 0.273438 7.66602 0.336914 7.54883 0.522461L3.16406 7.50977L0.888672 4.53125C0.766602 4.36035 0.644531 4.29199 0.46875 4.29199C0.19043 4.29199 0 4.48242 0 4.75098C0 4.86328 0.0488281 4.99023 0.141602 5.10742L2.67578 8.33496C2.82227 8.52539 2.97363 8.61816 3.18359 8.61816Z" 
+              fill="black" 
+              stroke="black" 
+              stroke-opacity="0.85" 
+              stroke-width="0.6" 
+              stroke-linecap="round" 
+              stroke-linejoin="round"/>
+    </g>
+</svg>
 </div>
 <p><slot></slot></p>`,
     style: `:host {
@@ -41,6 +47,11 @@ export class Checkbox extends initElement({
 :host p,
 :host svg {
   margin: 0;
+}
+:host div[type] svg {
+  width: 8px;
+  height: 8px;
+  filter: invert(1);
 }
 :host([state=off]) div[type] {
   background: #fff;

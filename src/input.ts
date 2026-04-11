@@ -2,7 +2,7 @@ import { initElement } from "./core/element";
 
 class Input extends initElement({
     name: "swift-input",
-    template: `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 122.021 123.193">
+    template: `<svg icon version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 122.021 123.193">
     <g>
         <rect height="123.193" opacity="0" width="122.021" x="0" y="0"/>
         <path d="M0 49.4141C0 76.6113 22.168 98.7793 49.4141 98.7793C60.4004 98.7793 70.5078 95.166 78.7109 89.0625L110.889 121.289C112.109 122.559 113.818 123.193 115.576 123.193C119.434 123.193 122.021 120.264 122.021 116.602C122.021 114.795 121.387 113.232 120.215 112.012L88.1836 79.834C94.8242 71.4844 98.8281 60.8887 98.8281 49.4141C98.8281 22.168 76.6602 0 49.4141 0C22.168 0 0 22.168 0 49.4141ZM9.13086 49.4141C9.13086 27.1973 27.1973 9.13086 49.4141 9.13086C71.6309 9.13086 89.6484 27.1973 89.6484 49.4141C89.6484 71.582 71.6309 89.6484 49.4141 89.6484C27.1973 89.6484 9.13086 71.582 9.13086 49.4141Z" fill="black" fill-opacity="0.85"/>
@@ -26,6 +26,8 @@ class Input extends initElement({
 }
 :host svg[icon] {
   display: none;
+  width: 14px;
+  height: 14px;
 }
 :host input {
   width: calc(100% - 14px);

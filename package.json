@@ -13,7 +13,7 @@
     "author": "Mengobs",
     "main": "./dist/main.js",
     "scripts": {
-        "build": "tsc\nrollup --config rollup.config.mjs\ncp -r dist/webswift.js docs/overrides/js",
+        "build": "tsc\nrollup --config rollup.config.mjs\ncp -r dist/webswift.js docs/overrides/js\ncp -r dist/webswift.js webswift.js",
         "docs": "mkdocs build\ncp -r assets site/docs\ncp -r assets site/docs/checkbox",
         "push": "git add .\ngit commit -m \"Update\"\ngit push\ncd site\ngit add .\ngit commit -m \"Update docs\"\ngit push origin docs"
     },
