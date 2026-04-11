@@ -6,17 +6,10 @@ const props = {
 export class Checkbox extends initElement({
     name: "swift-checkbox",
     template: `<div type>
-    <svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink">
-        <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"
-            font-family="SFPro-Semibold, SF Pro" font-size="10" font-weight="bold">
-            <g id="Controls/Checkbox/Checkbox" transform="translate(-1, -1.5)" fill="#FFFFFF">
-                <g id="Checkbox-Type" transform="translate(0, 1)">
-                    <text id="􀆅">
-                        <tspan x="1.18945312" y="10.5">􀆅</tspan>
-                    </text>
-                </g>
-            </g>
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 106.592 109.131">
+        <g>
+            <rect height="109.131" opacity="0" width="106.592" x="0" y="0"/>
+            <path d="M39.502 109.131C41.7969 109.131 43.5059 108.105 44.7754 106.25L105.225 11.4746C106.201 9.96094 106.592 8.78906 106.592 7.61719C106.592 4.63867 104.639 2.68555 101.66 2.68555C99.6094 2.68555 98.3887 3.41797 97.168 5.41992L39.2578 96.9238L9.66797 59.3262C8.34961 57.5195 7.08008 56.7383 5.07812 56.7383C2.09961 56.7383 0 58.7891 0 61.7188C0 62.9883 0.488281 64.3066 1.5625 65.625L34.0332 106.152C35.6445 108.203 37.2559 109.131 39.502 109.131Z" fill="black" fill-opacity="0.85"/>
         </g>
     </svg>
 </div>
