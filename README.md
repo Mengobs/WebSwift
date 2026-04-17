@@ -1,12 +1,10 @@
 # WebSwift
 
-> Version / 版本: 1.2
+> Version / 版本: 1.3
 
 `Swift UI` on `Web Components API` based by `TypeScript`.
 
-由 `TypeScript` 开发，基于 `Web Components API` 的 `Swift UI` 实现。
-
-> Swift, Mac, macOS and SwiftUI were trackmarks registered by Apple.
+由 `TypeScript` 开发，基于 `Web Components API` 的 `Swift UI` 控件前端实现。
 
 > Swift、Mac、macOS、SwiftUI 是 Apple Inc. 注册的商标。
 
