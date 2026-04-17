@@ -66,15 +66,15 @@
         function summon_messagebox() {
             document.body.insertAdjacentHTML("beforeend", `<swift-messagebox iconpath="../Logo.png">
     <p slot="title">Messagebox</p>
-    <p slot="text">This message box is part of WebSwift, designed with reference to Apple Design Resources.</p>
+    <p slot="text">This message box is part of WebSwift, designed by Apple in California</p>
     <swift-button primary slot="button" onclick="this.parentNode.remove()">OK</swift-button>
 </swift-messagebox>`);
         }
 
         function summon_notification() {
-            document.body.insertAdjacentHTML("beforeend", `<swift-notification iconpath="../Logo.png">
+            document.body.insertAdjacentHTML("beforeend", `<swift-notification iconpath="../Logo.png" onclick="this.remove()">
     <p slot="title">Notification</p>
-    <p slot="text">This notification is part of WebSwift, designed with reference to Apple Design Resources.</p>
+    <p slot="text">This notification is part of WebSwift, designed by Apple in California</p>
     <p slot="time">now</p>
 </swift-notification>`);
         }
