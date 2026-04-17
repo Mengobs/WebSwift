@@ -40,10 +40,6 @@ body {
   src: url(./sf-pro-display_semibold.woff2);
   /* (C) 2019 Apple Inc. All rights reserved. */
 }
-p {
-  margin: 0;
-}
-
 div.overlay {
   position: fixed;
   inset: 0;
@@ -67,6 +63,9 @@ body > swift-window .row {
   background: rgba(0, 0, 0, 0.02);
   display: inline-flex;
   justify-content: space-between;
+}
+body > swift-window .row p {
+  margin: 0;
 }
 body > swift-window .row.first {
   margin-top: 20px;

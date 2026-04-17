@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cn">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8">
@@ -43,6 +43,14 @@
             <p>Checkbox</p>
             <swift-checkbox state="on">Checkbox</swift-checkbox>
         </div>
+        <div class="row middle">
+            <p>Messagebox</p>
+            <swift-button primary onclick="summon_messagebox()">Show</swift-button>
+        </div>
+        <div class="row middle">
+            <p>Notification</p>
+            <swift-button primary onclick="summon_notification()">Show</swift-button>
+        </div>
         <div class="row last" style="margin-bottom: 40px">
             <p>Progress</p>
             <div style="display: flex; flex-direction: column; gap: 25px;">
@@ -54,6 +62,23 @@
 
     <!-- <script src="https://cdn.jsdelivr.net/gh/mengobs/webintosh-desktop/src/javascripts/ui/webswift.js"></script> -->
     <script src="../webswift.js"></script>
+    <script>
+        function summon_messagebox() {
+            document.body.insertAdjacentHTML("beforeend", `<swift-messagebox iconpath="../Logo.png">
+    <p slot="title">Messagebox</p>
+    <p slot="text">This message box is part of WebSwift, designed with reference to Apple Design Resources.</p>
+    <swift-button primary slot="button" onclick="this.parentNode.remove()">OK</swift-button>
+</swift-messagebox>`);
+        }
+
+        function summon_notification() {
+            document.body.insertAdjacentHTML("beforeend", `<swift-notification iconpath="../Logo.png">
+    <p slot="title">Notification</p>
+    <p slot="text">This notification is part of WebSwift, designed with reference to Apple Design Resources.</p>
+    <p slot="time">now</p>
+</swift-notification>`);
+        }
+    </script>
 </body>
 
 </html>

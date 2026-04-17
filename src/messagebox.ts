@@ -45,6 +45,8 @@ export class MessageBox extends initElement({
   padding-bottom: 16px;
   animation: Pop 0.3s linear forwards;
   font-family: "SFPro-Regular", "PingFangSC-Regular";
+  position: absolute;
+  left: calc(50% - 114px);
 }
 :host img[icon] {
   width: 64px;
@@ -70,11 +72,12 @@ export class MessageBox extends initElement({
     props,
     syncProps: ["iconpath"],
     setup(shadow) {
-        console.log(111)
+        // console.log(111)
         setTimeout(() => {
             const img = shadow.querySelector<HTMLImageElement>("img");
             img!.src = this.iconpath;
-            console.log(img, this.iconpath)
+            this.style.top = `calc(50% - ${this.offsetHeight/2})`;
+            // console.log(img, this.iconpath)
         });
         return {}
     }

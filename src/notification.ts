@@ -48,6 +48,7 @@ class Notification extends initElement({
   -webkit-backdrop-filter: blur(30px);
           backdrop-filter: blur(30px);
   animation: in 0.4s ease;
+  padding: 13px 0;
 }
 :host(.close) {
   animation: out 0.4s ease;
@@ -77,12 +78,14 @@ class Notification extends initElement({
 ::slotted([slot=time]) {
   font-family: "SFPro-Regular", "PingFangSC-Regular";
   font-size: 11px;
-  color: #BFBFBF;
+  color: #000;
+  opacity: 0.5;
   line-height: 14px;
   align-self: flex-start;
   margin: 0;
-  margin-top: 12px;
-  margin-right: 14px;
+  position: absolute;
+  top: 12px;
+  right: 14px;
 }`,
     props: {
         command: "",
